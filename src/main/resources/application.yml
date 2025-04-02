@@ -1,0 +1,59 @@
+spring:
+  application:
+    name: mail-service
+  
+  # Cấu hình SMTP cho Gmail
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: lric321@gmail.com
+    password: xkiv jgsn osem jeex
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  
+  # Cấu hình upload file
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  
+  # Cấu hình MySQL Database
+  datasource:
+    url: jdbc:mysql://localhost:3307/maildb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: mailuser
+    password: mailpass
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  # Cấu hình SQL initialization
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+  
+  # Cấu hình JPA
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: none
+  
+  # Cấu hình H2 Console
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+        trace: false
+        web-admin-password: password
+
+# Cấu hình server
+server:
+  port: 8081 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông báo giờ làm việc</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .warning {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .details {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Thông báo giờ làm việc không đủ</h1>
+    </div>
+    <div class="content">
+        <p>Xin chào <strong>${name}</strong>,</p>
+
+        <p>Hệ thống ghi nhận thời gian làm việc của bạn trong ngày hôm nay chưa đủ 8 tiếng quy định.</p>
+
+        <div class="details">
+            <p>Chi tiết:</p>
+            <ul>
+                <li>Thời gian làm việc thực tế: <strong>${actualHours} giờ</strong></li>
+                <li>Thời gian còn thiếu: <span class="warning">${missingMinutes} phút</span></li>
+            </ul>
+        </div>
+
+        <p>Vui lòng lưu ý:</p>
+        <ul>
+            <li>Thời gian làm việc yêu cầu mỗi ngày là 8 tiếng</li>
+            <li>Hệ thống chỉ ghi nhận thời gian làm việc đến 19:30 mỗi ngày</li>
+            <li>Nếu bạn có việc đột xuất hoặc nghỉ phép, vui lòng thông báo cho quản lý</li>
+        </ul>
+
+        <p>Trân trọng,<br>Phòng Nhân sự</p>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Company Name. Tất cả các quyền được bảo lưu.</p>
+        <p>Email: hr@company.com | Điện thoại: 028 1234 5678</p>
+    </div>
+</body>
+
+</html>
