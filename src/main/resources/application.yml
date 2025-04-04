@@ -1,7 +1,7 @@
 spring:
   application:
     name: mail-service
-  
+
   # Cấu hình SMTP cho Gmail
   mail:
     host: smtp.gmail.com
@@ -14,26 +14,26 @@ spring:
           auth: true
           starttls:
             enable: true
-  
+
   # Cấu hình upload file
   servlet:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
-  
+
   # Cấu hình MySQL Database
   datasource:
     url: jdbc:mysql://localhost:3307/maildb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: mailuser
     password: mailpass
     driver-class-name: com.mysql.cj.jdbc.Driver
-  
+
   # Cấu hình SQL initialization
   sql:
     init:
       mode: always
       schema-locations: classpath:schema.sql
-  
+
   # Cấu hình JPA
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
@@ -43,7 +43,7 @@ spring:
         format_sql: true
     hibernate:
       ddl-auto: none
-  
+
   # Cấu hình H2 Console
   h2:
     console:
